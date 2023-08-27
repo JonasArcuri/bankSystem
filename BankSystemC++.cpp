@@ -175,18 +175,48 @@ void bankSystem() {
 			cout << "Balance : $" << balance << endl;
 			cin >> transfer;
 			
-			if (transfer)
+			if (transfer <= balance)
 			{
 				double count;
 				count = balance - transfer;
 				balance = count;
 				cout << "Transfer performed successfully" << " Amount $ " << transfer << endl;
 				cout << "New Balance" << " $ " << balance << endl;
+				
+			}
+			else if (transfer > balance)
+			{
+				cout << "Sorry, you don't have that money, please contact the Support!" << endl;
+				cout << "Money Requested" << " $ " << transfer << endl;
+				cout << "Money in account" << " $ " << balance << endl;
+				bankSystem();
+			}
+			else {
+				cout << "Invalid" << endl;
+			}
+			
 				cout << "What you wanna do now?" << endl;
 				cout << "0 - Back to Menu" << endl;
 				cout << "1 - Contact Support" << endl << endl;
 				cin >> options;
-			}
+				
+				switch (options) {
+					case 0:
+						cout << "Going to Menu" << endl;
+						bankSystem();
+						break;
+					case 1: 
+						cout << "You can contact us via Email or Whatsapp" << endl;
+						cout << "Email : fastbank@gmail.com" << endl;
+						cout << "Whatsapp : +55 47988814411" << endl << endl;
+						bankSystem();
+						break;
+					
+					default:
+						cout << "Invalid" << endl;
+						bankSystem();
+						 
+				}
 			
 
 			
@@ -208,6 +238,5 @@ int main()
 	
 	return 0;
 }
-
 
 
