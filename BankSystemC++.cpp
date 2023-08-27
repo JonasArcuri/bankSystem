@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//Função menu Sistema, em inglês
+//FunÃ§Ã£o menu Sistema, em inglÃªs
 
 
 
